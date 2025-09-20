@@ -1,0 +1,24 @@
+import random
+
+def dice_game():
+    print("欢迎来到掷骰子小游戏！你和电脑各掷一个 1-6 的骰子，比点数大小。")
+    while True:
+        input("按回车掷骰子...")
+        player = random.randint(1, 6)
+        computer = random.randint(1, 6)
+        print(f"你掷出: {player}")
+        print(f"电脑掷出: {computer}")
+        
+        if player > computer:
+            print("你赢了！")
+        elif player < computer:
+            print("你输了！")
+        else:
+            print("平局！")
+        
+        again = input("再来一局吗？(y/n): ").lower()
+        if again != 'y':
+            break
+
+if __name__ == "__main__":
+    dice_game()
